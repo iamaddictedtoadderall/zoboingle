@@ -38,7 +38,7 @@ function newRun() {
   const map = IP.genMap(1);
   RUN = {
     leg: 1, map, node: map.start, path: [map.start], moves: 0, quiet: -1.5, night: false,
-    res: { fuel: 10, hull: 20, hullMax: 20, prov: 12, ward: 5, lore: 0, scrip: 30, pass: 9 },
+    res: { fuel: 11, hull: 20, hullMax: 20, prov: 12, ward: 5, lore: 0, scrip: 30, pass: 9 },
     att: 0, cars: ['loco', 'tender', 'zero', 'radio', 'lamp', 'coach'], crew,
     items: { bandage: 1, flare: 1 }, flags: {}, seen: {}, screen: 'map', stationVisit: null, deaths: []
   };
@@ -734,7 +734,7 @@ function nightfall() {
     if (lit) notes.push(...IP.fx({ ward: -1 }));
     if (RUN.res.prov >= need) notes.push(...IP.fx({ prov: -need }));
     else { RUN.res.prov = 0; notes.push('Hunger.', ...IP.fx({ nerveAll: -2, hpAll: -1, pass: RUN.res.pass >= 2 ? -2 : -RUN.res.pass })); }
-    const p = 0.28 + 0.08 * RUN.leg + RUN.att * 0.03 - (lit ? 0.22 : 0) + (RUN.flags.porterMarked ? 0.05 : 0);
+    const p = 0.2 + 0.09 * RUN.leg + RUN.att * 0.03 - (lit ? 0.22 : 0) + (RUN.flags.porterMarked ? 0.05 : 0);
     if (Math.random() < p) {
       const list = IP.pick(IP.ENCOUNTERS[RUN.leg]).slice();
       if (!lit && RUN.leg >= 2) list.push('lantern');
