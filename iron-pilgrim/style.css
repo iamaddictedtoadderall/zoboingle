@@ -305,8 +305,9 @@ input[type=range]{width:100%;accent-color:var(--brass)}
   .hud{padding:6px 8px}
   .g{min-width:38px}
   .g svg{width:36px;height:24px}
-  .strip{grid-template-columns:repeat(var(--n),minmax(118px,1fr));min-width:calc(var(--n) * 122px)}
-  .car{min-height:240px}
+  .strip{grid-template-columns:repeat(var(--n),minmax(108px,1fr));min-width:calc(var(--n) * 112px)}
+  .car{min-height:180px}
+  .hud .g-k{font-size:.56rem}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
